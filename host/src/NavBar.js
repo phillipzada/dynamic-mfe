@@ -1,10 +1,28 @@
 import { NavLink } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Logo from './Logo';
 import './NavBar.css';
 
 const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const headerRef = useRef(null); // Reference to the header
+
+  // Adjust the top style of the menu based on the header height
+  useEffect(() => {
+    const updateMenuPosition = () => {
+      const menu = document.querySelector('.menu');
+      if (menu && headerRef.current) {
+        menu.style.top = `${headerRef.current.offsetHeight}px`;
+      }
+    };
+
+    updateMenuPosition(); // Call when component mounts
+    window.addEventListener('resize', updateMenuPosition); // Adjust on resize
+    return () => window.removeEventListener('resize', updateMenuPosition);
+  }, []);
+
+
   const menuItems = [
     { label: 'Home', to: '/' },
     { label: 'Build Time Module Federation', to: 'app1' },
@@ -18,13 +36,13 @@ const NavBar = () => {
 
   return (
     <div className="container">
-      <div className="header">
+      <div className="header" ref={headerRef}>
         <div className="logo-title">
           <Logo />
           <h1 className="title">Federation Demo</h1>
           <br />
         </div>
-        <button className="menu-button" onClick={() => setIsOpen(!isOpen)}>
+        <button type="button" className="menu-button" onClick={() => setIsOpen(!isOpen)}>
           &#9776;
         </button>
       </div>

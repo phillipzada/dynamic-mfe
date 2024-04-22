@@ -3,8 +3,10 @@
   max-width: 100vw;
   margin: 0 auto;
   padding: 0 16px;
-  background-color: #333; /* Dark background for the container */
-  color: white; /* White text color */
+  background-color: #333;
+  /* Dark background for the container */
+  color: white;
+  /* White text color */
 }
 
 .header {
@@ -25,13 +27,17 @@
 }
 
 .menu-button {
-  display: block; /* Ensure it's always block by default */
+  display: block;
+  /* Ensure it's always block by default */
   background: none;
   border: none;
-  color: white; /* Ensure the hamburger icon is white */
+  color: white;
+  /* Ensure the hamburger icon is white */
   cursor: pointer;
-  font-size: 24px; /* Make the icon larger */
-  padding: 10px; /* Add some padding around the icon */
+  font-size: 24px;
+  /* Make the icon larger */
+  padding: 10px;
+  /* Add some padding around the icon */
 }
 
 .menu {
@@ -59,10 +65,42 @@
 }
 
 .nav-link {
-  color: white; /* White text color for links */
+  color: white;
+  /* White text color for links */
   text-decoration: none;
 }
 
 .nav-link.active {
-  color: yellowgreen; /* Active link color */
+  color: yellowgreen;
+  /* Active link color */
+}
+
+@media (max-width: 768px) {
+  .header .title {
+      font-size: 1.25rem; /* Reduced font size for mobile screens */
+  }
+
+  .menu {
+      position: absolute;
+      top: 60px; /* Adjusted to not overlap the button */
+      left: 0;
+      right: 0;
+      background-color: #333; /* Dark background for visibility */
+      z-index: 1000; /* Ensure it is on top of other content */
+      display: none; /* Start hidden */
+  }
+
+  .menu.active {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items horizontally */
+  }
+
+  .header {
+      position: relative; /* Needed for absolute positioning of the menu */
+  }
+
+  .logo {
+    max-width: 20vw;
+  }
 }

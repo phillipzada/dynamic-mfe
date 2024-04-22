@@ -12,7 +12,6 @@ export class AppComponent implements DoBootstrap, OnInit {
   title = 'angular-app3';
 
   ngDoBootstrap() {
-    debugger;
     console.warn('TEST');
   }
   ngOnInit(): void {
