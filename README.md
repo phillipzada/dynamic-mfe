@@ -27,3 +27,13 @@ This demo utilises the dynamic nature of import maps and the containerisation be
 [x] Load MFE using iFrame  
 [x] Load React MFEs  
 [x] Load Angular MFEs
+
+## Getting Started
+
+1. Clone the repo
+
+2. Start the dev server
+
+```
+npm run start
+```
