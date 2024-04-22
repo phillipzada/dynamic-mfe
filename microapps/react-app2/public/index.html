@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>React App 2</title>
+
+    <script type="text/javascript">
+      //   window.onload = function () {
+      //     if (parent) {
+      //       var oHead = document.getElementsByTagName('head')[0];
+      //       var arrStyleSheets = parent.document.getElementsByTagName('style');
+      //       for (var i = 0; i < arrStyleSheets.length; i++)
+      //         oHead.appendChild(arrStyleSheets[i].cloneNode(true));
+      //     }
+      //   };
+      window.addEventListener('message', (event) => {
+        if (event.data.style) {
+          const style = document.createElement('style');
+          style.innerHTML = event.data.style;
+          document.head.appendChild(style);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
