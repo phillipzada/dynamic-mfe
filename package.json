@@ -1,5 +1,5 @@
 {
-  "name": "dynamic-mfe-demo",
+  "name": "microapp-federation-demo",
   "private": true,
   "workspaces": {
     "packages": [

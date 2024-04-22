@@ -10,7 +10,7 @@
             ,***,***,***,***,***,**
                 ,***************,**
 
-# Z Ware | Dynamic MFE Demo
+# Z Ware | Microapp Federation Demo
 
 ## Purpose
 
