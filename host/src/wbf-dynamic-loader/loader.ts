@@ -50,7 +50,6 @@ export function loadRemoteEntry(
 
     const script = document.createElement('script');
     script.src = remoteEntry;
-    // if (remoteEntry.indexOf('4200') > -1) script.type = 'module';
     script.onerror = reject;
 
     console.log(script.type);

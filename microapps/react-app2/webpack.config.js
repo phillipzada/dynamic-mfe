@@ -11,9 +11,8 @@ module.exports = {
   mode: 'development',
   devServer: {
     static: path.join(__dirname, 'dist'),
-    port: 3003,
-    hot: false,
-    liveReload: false,
+    port: 3003, 
+    allowedHosts: 'all'
   },
   output: {
     // CONFIGURING FOR SYSTEMJS FIRST

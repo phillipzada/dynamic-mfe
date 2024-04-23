@@ -28,5 +28,8 @@ const config = withModuleFederationPlugin({
 config.output.scriptType = 'text/javascript';
 config.optimization.runtimeChunk = false;
 config.output.uniqueName = 'angular_app3';
+config.devServer = {
+  allowedHosts: 'all'
+};
 
 module.exports = config;

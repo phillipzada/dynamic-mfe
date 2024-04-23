@@ -20,6 +20,7 @@ const RemoteApp2 = React.lazy(async () => {
 const RemoteApp3 = React.lazy(async () => {
   return await loadSystemJsRemoteModule({
     scope: 'app3',
+    //scope: 'default',
     name: 'react-app1-sjs',
     moduleName: './App',
   });
@@ -28,6 +29,7 @@ const RemoteApp3 = React.lazy(async () => {
 const RemoteApp4 = React.lazy(async () => {
   return await loadSystemJsRemoteModule({
     scope: 'app4',
+    //scope: 'default',
     name: 'react-app2-sjs',
     moduleName: './App',
   });
@@ -201,13 +203,15 @@ const App = () => {
               <Suspense fallback={<LoadingComponent name="RemoteApp4" />}>
                 <RemoteApp4 title="Dynamic SystemJS App 2" />
               </Suspense>
-              <angular-container
-                onload={RemoteAppAngularModule(
-                  'Dynamic Module Federation (Module)'
-                )}
-              >
-                <angular-remote-entry-app-root></angular-remote-entry-app-root>
-              </angular-container>
+              <Suspense fallback={<LoadingComponent name="AngularApp" />}>
+                <angular-container
+                  onload={RemoteAppAngularModule(
+                    'Dynamic Module Federation (Module)'
+                  )}
+                >
+                  <angular-remote-entry-app-root></angular-remote-entry-app-root>
+                </angular-container>
+              </Suspense>
               <AngularWrapper />
               {loading ? <LoadingComponent name="Standalone" /> : <></>}
               <iframe
