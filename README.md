@@ -20,13 +20,13 @@ This demo utilises the dynamic nature of import maps and the containerisation be
 
 ## Goals
 
-[x] Load MFE using Static Module Federation  
-[x] Load MFE using Dynamic Module Federation (at runtime)  
-[x] Load MFE using Dynamic Module Federation with an Import Map  
-[x] Load MFE using SystemJS  
-[x] Load MFE using iFrame  
-[x] Load React MFEs  
-[x] Load Angular MFEs
+- [x] Load MFE using Static Module Federation  
+- [x] Load MFE using Dynamic Module Federation (at runtime)  
+- [x] Load MFE using Dynamic Module Federation with an Import Map  
+- [x] Load MFE using SystemJS  
+- [x] Load MFE using iFrame  
+- [x] Load React MFEs  
+- [x] Load Angular MFEs
 
 ## Getting Started
 
